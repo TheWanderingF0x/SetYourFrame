@@ -2,6 +2,7 @@
 
 ## 2026-04-04
 
+- **GitHub Pages:** Root Jekyll site (`_config.yml`, `index.md`, `_layouts/default.html`) plus workflow update: build Vite with `--base=/<repo>/camera-lab/`, merge `dist` into `_site/camera-lab/`, add `.nojekyll`.
 - **Numbers:** All displayed measurements and readouts use **at most 2 decimal places** via `formatMax2Decimals` in `units.ts` and updated `formatDistance`.
 - **DoF scene:** Removed near/far overlay labels, near/far SVG markers, ground **focus band**, and its pulse animation; visualization shows **FOV wedge**, ground line, and **Subject** only (aligned to cone geometry).
 - **DoF scene (earlier):** Logarithmic distance strip; draggable Subject; camera icon; `sceneScale.ts`. Removed unused `dofBarPositions` from `dof.ts`.

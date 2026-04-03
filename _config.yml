@@ -1,0 +1,13 @@
+# Jekyll — GitHub Pages (project site: /SetYourFrame/)
+title: Set Your Frame
+description: Camera Lab — depth of field, exposure, astro
+baseurl: /SetYourFrame
+url: https://thewanderingf0x.github.io
+
+markdown: kramdown
+
+# Do not let Jekyll traverse the React/Vite project (built in CI, copied into _site)
+exclude:
+  - camera-lab
+  - .github
+  - README.md

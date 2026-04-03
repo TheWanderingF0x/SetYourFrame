@@ -17,6 +17,16 @@ npm run dev
 
 Open the URL Vite prints (usually `http://localhost:5173`).
 
+### GitHub Pages (Jekyll + this app)
+
+The repo root is a minimal **Jekyll** site (`_config.yml`, `index.md`, `_layouts/default.html`). GitHub Actions builds **Camera Lab** with `vite build --base=/<repo>/camera-lab/`, runs Jekyll into `_site`, copies `camera-lab/dist` to `_site/camera-lab/`, and adds `.nojekyll` so assets are not processed by Jekyll again.
+
+After enabling **Pages** (source: GitHub Actions), the app lives at:
+
+`https://<user>.github.io/<repo>/camera-lab/`
+
+If you rename the repository, update `baseurl` in the root `_config.yml` to match `/YourRepoName`.
+
 ### Other scripts
 
 | Command | Purpose |
