@@ -87,8 +87,9 @@
   cursor: pointer;
   text-align: left;
   font: inherit;
-  color: inherit;
+  color: var(--text);
   transition: border-color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .chip:hover {
@@ -204,6 +205,17 @@
   color: var(--text-muted);
 }
 
+.seg select,
+.theme-select select {
+  font: inherit;
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
 .seg-inline {
   gap: 0.25rem;
   margin-bottom: 0.65rem;
@@ -214,8 +226,15 @@
   padding: 0.35rem 0.65rem;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: var(--input-bg);
+  background: var(--btn-bg);
+  color: var(--text-h);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.seg-inline button:hover:not(.active) {
+  background: var(--btn-bg-hover);
+  border-color: var(--accent-border);
 }
 
 .seg-inline button.active {
@@ -502,12 +521,15 @@
   padding: 0.45rem 0.85rem;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: var(--input-bg);
+  background: var(--btn-bg);
+  color: var(--text-h);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-secondary:hover {
   border-color: var(--accent-border);
+  background: var(--btn-bg-hover);
 }
 
 .triangle {

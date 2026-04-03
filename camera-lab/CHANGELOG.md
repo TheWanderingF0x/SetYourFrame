@@ -2,6 +2,7 @@
 
 ## 2026-04-04
 
+- **UI:** **Light** theme by default; **Light / Dark** toggle (persisted in `localStorage`); explicit `data-theme` on `<html>`. Fixed low-contrast native **buttons** (Catalog / Custom focal length, Set hyperfocal, etc.) with `color: var(--text-h)` and dedicated `--btn-bg` / `--btn-bg-hover` tokens; chip and secondary button styles updated.
 - **GitHub Pages:** Root Jekyll site (`_config.yml`, `index.md`, `_layouts/default.html`) plus workflow update: build Vite with `--base=/<repo>/camera-lab/`, merge `dist` into `_site/camera-lab/`, add `.nojekyll`.
 - **Numbers:** All displayed measurements and readouts use **at most 2 decimal places** via `formatMax2Decimals` in `units.ts` and updated `formatDistance`.
 - **DoF scene:** Removed near/far overlay labels, near/far SVG markers, ground **focus band**, and its pulse animation; visualization shows **FOV wedge**, ground line, and **Subject** only (aligned to cone geometry).

@@ -83,7 +83,20 @@ function useSensor(
   }, [sensorId, custom, useCustom])
 }
 
+type ThemeChoice = 'light' | 'dark'
+
+function readStoredTheme(): ThemeChoice {
+  try {
+    const s = localStorage.getItem('camera-lab-theme')
+    if (s === 'light' || s === 'dark') return s
+  } catch {
+    /* ignore */
+  }
+  return 'light'
+}
+
 export default function App() {
+  const [theme, setTheme] = useState<ThemeChoice>(readStoredTheme)
   const [units, setUnits] = useState<UnitSystem>('metric')
   const [sensorId, setSensorId] = useState(SENSORS[0].id)
   const [customSensor, setCustomSensor] = useState(false)
@@ -111,6 +124,15 @@ export default function App() {
   const draggingSubjectRef = useRef(false)
 
   const sensor = useSensor(sensorId, { w: customW, h: customH, hPx: customHPx }, customSensor)
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    try {
+      localStorage.setItem('camera-lab-theme', theme)
+    } catch {
+      /* ignore */
+    }
+  }, [theme])
 
   const filteredLenses = useMemo(
     () => filterLenses({ mount: mountFilter, vendor: vendorFilter, search: lensQuery }),
@@ -286,7 +308,18 @@ export default function App() {
           </p>
         </div>
         <div className="hero-actions">
-          <label className="seg">
+          <label className="seg theme-select">
+            <span>Theme</span>
+            <select
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as ThemeChoice)}
+              aria-label="Color theme"
+            >
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+          <label className="seg theme-select">
             <span>Units</span>
             <select value={units} onChange={(e) => setUnits(e.target.value as UnitSystem)}>
               <option value="metric">Metric</option>
