@@ -3,7 +3,8 @@
 ## 2026-04-04
 
 - **UI:** **Light** theme by default; **Light / Dark** toggle (persisted in `localStorage`); explicit `data-theme` on `<html>`. Fixed low-contrast native **buttons** (Catalog / Custom focal length, Set hyperfocal, etc.) with `color: var(--text-h)` and dedicated `--btn-bg` / `--btn-bg-hover` tokens; chip and secondary button styles updated.
-- **GitHub Pages:** Root Jekyll site (`_config.yml`, `index.md`, `_layouts/default.html`) plus workflow update: build Vite with `--base=/<repo>/camera-lab/`, merge `dist` into `_site/camera-lab/`, add `.nojekyll`.
+- **GitHub Pages:** Workflow uses `actions/checkout@v6`, `setup-node@v6` (Node **24**), `configure-pages@v6`, `deploy-pages@v5`, `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true`; **`upload-pages-artifact@v3`** kept so `.nojekyll` is included (v4 omits dotfiles from the archive).
+- **GitHub Pages (earlier):** Root Jekyll site (`_config.yml`, `index.md`, `_layouts/default.html`) plus build Vite with `--base=/<repo>/camera-lab/`, merge `dist` into `_site/camera-lab/`, add `.nojekyll`.
 - **Numbers:** All displayed measurements and readouts use **at most 2 decimal places** via `formatMax2Decimals` in `units.ts` and updated `formatDistance`.
 - **DoF scene:** Removed near/far overlay labels, near/far SVG markers, ground **focus band**, and its pulse animation; visualization shows **FOV wedge**, ground line, and **Subject** only (aligned to cone geometry).
 - **DoF scene (earlier):** Logarithmic distance strip; draggable Subject; camera icon; `sceneScale.ts`. Removed unused `dofBarPositions` from `dof.ts`.
