@@ -38,9 +38,10 @@ If you rename the repository, update `baseurl` in the root `_config.yml` to matc
 
 ## Using the app
 
-### Units
+### Theme and units
 
-The app defaults to **metric**. You can switch **Imperial** for distances and DoF readouts. Genre presets convert subject distance correctly for the active unit system.
+- **Theme:** **Light** is the default (better contrast for controls). Use the header **Theme** control for **Light** or **Dark**; the choice is saved in `localStorage` (`camera-lab-theme`).
+- **Units:** Defaults to **metric**; switch **Imperial** for distances and DoF readouts. Genre presets convert subject distance for the active unit system.
 
 ### Sensor
 
