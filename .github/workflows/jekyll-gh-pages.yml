@@ -55,6 +55,8 @@ jobs:
       - name: Publish Camera Lab into site
         run: |
           set -euo pipefail
+          # jekyll-build-pages writes _site via Docker — directory is often root:root here
+          sudo chown -R "$USER:$USER" _site
           mkdir -p _site/camera-lab
           cp -r camera-lab/dist/. _site/camera-lab/
           touch _site/.nojekyll

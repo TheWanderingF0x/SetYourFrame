@@ -21,7 +21,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 
 The repo root is a minimal **Jekyll** site (`_config.yml`, `index.md`, `_layouts/default.html`). GitHub Actions builds **Camera Lab** with `vite build --base=/<repo>/camera-lab/`, runs Jekyll into `_site`, copies `camera-lab/dist` to `_site/camera-lab/`, and adds `.nojekyll` so assets are not processed by Jekyll again.
 
-The workflow opts into **Node 24** for JavaScript actions (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24`) and pins **upload-pages-artifact@v3** so `.nojekyll` is published (v4 excludes dotfiles from the tarball).
+The workflow opts into **Node 24** for JavaScript actions (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24`), pins **upload-pages-artifact@v3** so `.nojekyll` is published (v4 excludes dotfiles from the tarball), and runs **`sudo chown -R "$USER:$USER" _site`** after Jekyll so the merge step can write into `_site` (Docker output is often root-owned on the runner).
 
 After enabling **Pages** (source: GitHub Actions), the app lives at:
 
