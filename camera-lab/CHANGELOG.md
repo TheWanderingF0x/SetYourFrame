@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-08-11
+
+- Public prep (repo root): README, MIT LICENSE, SECURITY.md, root `.gitignore` for Set Your Frame / Camera Lab.
+
 ## 2026-04-04
 
 - **UI:** **Light** theme by default; **Light / Dark** toggle (persisted in `localStorage`); explicit `data-theme` on `<html>`. Fixed low-contrast native **buttons** (Catalog / Custom focal length, Set hyperfocal, etc.) with `color: var(--text-h)` and dedicated `--btn-bg` / `--btn-bg-hover` tokens; chip and secondary button styles updated.

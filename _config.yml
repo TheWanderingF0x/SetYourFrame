@@ -11,3 +11,7 @@ exclude:
   - camera-lab
   - .github
   - README.md
+  - LICENSE
+  - SECURITY.md
+  - CHANGELOG.md
+  - .gitignore

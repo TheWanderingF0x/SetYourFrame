@@ -1,0 +1,19 @@
+# Dependencies & build output
+node_modules/
+camera-lab/node_modules/
+camera-lab/dist/
+dist/
+_site/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.log
+
+# Env (none required today; keep habit)
+.env
+.env.local
+.env.*.local
